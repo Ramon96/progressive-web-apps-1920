@@ -1,8 +1,129 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+html, body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:  #00a5ff;
+    background-size: 400% 400%;
+    -webkit-animation: backgroundTransition 12s ease infinite;
+    -moz-animation: backgroundTransition 12s ease infinite;
+    animation: backgroundTransition 12s ease infinite; 
+    animation-direction: alternate;
+    /* width: 100%; */
+    height: 100%; 
+    margin: 0;
+    color: #fff;
 }
 
-a {
-  color: #00B7FF;
+#preloader{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, .9);
+    transition: .2s;
+    display: none;
 }
+
+#preloader img{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.topside{
+    min-height: 100%;
+    padding-bottom: 100px;
+}
+.topside h1{
+    margin: 0;
+    text-align: center;
+    padding: 70px 0;
+    font-size: 2.2em;
+}
+
+.topside h2{
+    text-align: center;
+}
+
+.topside form{
+    margin: auto;
+    display: block;
+    width: fit-content;
+    margin-bottom: 40px;
+}
+
+.topside form input[type=text]{
+    background: transparent;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    border-left: none;
+    border-top: none;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    font-weight: bold;
+}
+
+.topside form input::placeholder{
+    color: lightsteelblue;
+    /* font-size: 2em; */
+}
+
+.topside form button[type=submit]{
+    background: transparent;
+    border-right: None;
+    border-bottom: none;
+    border-left: none;
+    border-top: none;
+    font-size: 1.5em;
+    color:white;
+    transition: .4s;
+}
+
+.topside form button[type=submit]:hover{
+    cursor: pointer;
+    opacity: .3;
+}
+
+
+main{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+}
+
+main div{
+    justify-self: center;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    width: 80%;
+    background-color: rgba(0,0,0, .6);
+}
+
+footer{
+    height: 100px;
+    margin-top:-100px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+footer p{
+    width: 80%;
+    margin: auto;
+}
+
+@-webkit-keyframes backgroundTransition {
+    0%{background-color: #00a5ff;}
+    100%{background-color: #0a00ff}
+}
+@-moz-keyframes backgroundTransition {
+    0%{background-color: #00a5ff;}
+    100%{background-color: #0a00ff}
+}
+@keyframes backgroundTransition { 
+    0%{background-color: #00a5ff;}
+    100%{background-color: #0a00ff}
+}
+
