@@ -1,1 +1,16 @@
 <h2>{{feedback}}</h2>
+<select>
+    {{#each championlist}}
+    <option value="{{this}}">{{this}}</option>
+    {{/each}}
+</select>
+<main>
+{{#each data}}
+<div>
+    <h3>Champion: {{championData.name}}</h3>
+    <p>Played: {{time}}</p>
+    <p>Lane: {{lane}}</p>
+    <a href="{{this.gameKey}}/{{../username}}">Match Details</a>
+</div>
+{{/each}}
+</main>

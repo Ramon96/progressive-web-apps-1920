@@ -84,6 +84,12 @@ html, body{
     opacity: .3;
 }
 
+select{
+    display: block;
+    margin: 2% auto;
+    font-size: 1.2em;
+}
+
 
 main{
     display:grid;

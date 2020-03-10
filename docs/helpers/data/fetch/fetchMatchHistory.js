@@ -6,7 +6,6 @@ async function fetchMatchHistory(summonerData, api, apiKey){
     const endpoint = `match/v4/matchlists/by-account/${summonerData.accountId}`;
     const url = `${api}${endpoint}?api_key=${apiKey}`
 
-    console.log(url)
     let matchHistory = fetch(url);
     let response = await matchHistory;
     let handleResponse = await response.json();

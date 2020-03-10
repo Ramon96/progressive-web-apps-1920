@@ -1,6 +1,7 @@
 const fetchMatchHistory = require("./fetch/fetchMatchHistory");
 const fetchSummoner = require("./fetch/fetchSummoner");
 const convertTimestamp = require("../convertTimestamp");
+const getChampion = require("./getChampion")
 
 async function getDataMH(name) {
     // incase of 403, it may be that the key has been expired (24 hours)
@@ -8,18 +9,18 @@ async function getDataMH(name) {
     const api = "https://euw1.api.riotgames.com/lol/";
     const summonerInformation = await fetchSummoner(api, apiKey, name);
     const matchHistory = await fetchMatchHistory(summonerInformation, api, apiKey);
-     const cleanData = cleanUp(matchHistory)
+    const cleanData = cleanUp(matchHistory)
     
 
      return cleanData;
 }
 
 function cleanUp(matchHistory) {
-    console.log( matchHistory)
     return matchHistory.matches.map(key => {
         return {
             region: key.platformId,
             championId: key.champion,
+            championData: getChampion(key.champion),
             time: convertTimestamp(key.timestamp),
             lane: key.lane,
             premade: key.role,
