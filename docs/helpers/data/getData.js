@@ -1,5 +1,6 @@
 const fetchMatchHistory = require("./fetch/fetchMatchHistory");
 const fetchSummoner = require("./fetch/fetchSummoner");
+const fetchMatchDetails = require("./fetch/fetchMatchDetails");
 const convertTimestamp = require("../convertTimestamp");
 const getChampion = require("./getChampion")
 
@@ -31,4 +32,51 @@ function cleanUp(matchHistory) {
     })
 }
 
-module.exports = getDataMH;
+async function getDataMD(gameKey, username) {
+    const apiKey = "RGAPI-45100875-d616-4769-b33e-4c6ac48ab89b";
+    const api = "https://euw1.api.riotgames.com/lol/";
+
+    const matchDetail = await fetchMatchDetails(gameKey, api, apiKey);
+    const personalDetail = personalMatchInfo(matchDetail, username)
+    return personalDetail;
+}
+
+function personalMatchInfo(MatchDetail, username) {
+    const participantID = MatchDetail.participantIdentities
+        .find(user => {
+            if (user.player.summonerName.toLowerCase() == username.toLowerCase()) {
+                return user;
+            }
+        }).participantId
+
+    const participantStats = MatchDetail.participants.find(key => {
+        if(key.participantId == participantID){
+            return key;
+        }
+    })
+
+    const mode = MatchDetail.gameMode;
+    return transformStats(participantStats.stats, mode, participantStats.championId);    
+}
+
+function transformStats(stats, mode, championId){
+   return {
+        win: stats.win ? 'Victory' : 'Defeat',
+        kills: stats.kills,
+        deaths: stats.deaths,
+        dmg: stats.totalDamageDealtToChampions,
+        vision: stats.visionScore,
+        farm: stats.totalMinionsKilled,
+        gamemode: mode,
+        champion: championId,
+        championData: getChampion(championId)
+    }
+}
+
+
+const getData = {
+    matchHistory: getDataMH,
+    matchDetail: getDataMD
+}
+
+module.exports = getData;
