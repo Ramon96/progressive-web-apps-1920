@@ -6,7 +6,7 @@ const getChampion = require("./getChampion")
 
 async function getDataMH(name) {
     // incase of 403, it may be that the key has been expired (24 hours)
-    const apiKey = "RGAPI-45100875-d616-4769-b33e-4c6ac48ab89b";
+    const apiKey = process.env.APIKEY;
     const api = "https://euw1.api.riotgames.com/lol/";
     const summonerInformation = await fetchSummoner(api, apiKey, name);
     const matchHistory = await fetchMatchHistory(summonerInformation, api, apiKey);
@@ -33,7 +33,7 @@ function cleanUp(matchHistory) {
 }
 
 async function getDataMD(gameKey, username) {
-    const apiKey = "RGAPI-45100875-d616-4769-b33e-4c6ac48ab89b";
+    const apiKey = process.env.APIKEY;
     const api = "https://euw1.api.riotgames.com/lol/";
 
     const matchDetail = await fetchMatchDetails(gameKey, api, apiKey);
