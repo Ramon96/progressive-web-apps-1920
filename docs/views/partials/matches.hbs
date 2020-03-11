@@ -1,8 +1,12 @@
 {{#each data }}
 <div>
-    <h3>Champion: {{championData.name}}</h3>
-    <p>Played: {{time}}</p>
-    <p>Lane: {{lane}}</p>
+    <h3>{{championData.name}}</h3>
+    <img src="/images/champions/{{championData.image.full}}" alt="{{championData.title}}">
+    <h4>Played</h4>
+    <p>{{time}}</p>
+    <h4>Lane</h4>
+    <p>{{lane}}</p>
     <a href="/match/{{this.gameKey}}/{{../username}}">Match Details</a>
 </div>
 {{/each}}
+

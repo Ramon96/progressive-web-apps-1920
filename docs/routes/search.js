@@ -20,7 +20,6 @@ router.get('/search/:id', function (req, res, next) {
                         return true;
                     }
                 })
-                console.log("joo")
                 res.render("partials/matches", {
                     layout: false,
                     title: "Search results",
