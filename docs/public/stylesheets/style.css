@@ -62,7 +62,7 @@ select:hover {
 .topside form {
     margin: auto;
     display: block;
-    width: fit-content;
+    width: max-content;
     margin-bottom: 40px;
     border-radius: 16px;
     background: #bbddf8;
