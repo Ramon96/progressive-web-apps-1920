@@ -1,9 +1,12 @@
 <h2>{{feedback}}</h2>
+<form action="">
 <select>
     {{#each championlist}}
     <option value="{{this}}">{{this}}</option>
     {{/each}}
 </select>
+    <button type="submit">Filter</button>
+</form>
 <main>
 {{>matches}}
 </main>

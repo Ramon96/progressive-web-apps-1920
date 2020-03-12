@@ -17,6 +17,9 @@ select {
         -10px -10px 19px #c8ecff;
     padding: 10px;
     height: 2em;
+    display: inline-block;
+    margin: 2% auto;
+    font-size: 1.5em;
 }
 
 select:hover {
@@ -120,11 +123,7 @@ select:hover {
         -7px -7px 15px #caefff;
 }
 
-select {
-    display: block;
-    margin: 2% auto;
-    font-size: 1.2em;
-}
+
 
 
 main {
@@ -179,7 +178,7 @@ main div img {
 main div a {
     padding: 20px;
     font-weight: bold;
-    /* color: #fff; */
+    color: #000;
     transition: opacity .4s;
 }
 
