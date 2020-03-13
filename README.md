@@ -42,3 +42,6 @@ This project also makes use of a .env file. Ask the developer for its content.
 - [ ] Make an interaction diagram.
 
 <!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+## Lisence 
+This project makes use of the MIT License
+[License](https://github.com/Ramon96/progressive-web-apps-1920/blob/master/LICENSE)
