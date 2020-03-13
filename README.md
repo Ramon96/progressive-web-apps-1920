@@ -46,6 +46,7 @@ To build the project, navigate to the root folder of this project and use the co
 - [ ] add a manifest.json
 - [ ] Make an actor diagram.
 - [ ] Make an interaction diagram.
+- [ ] Error handling, what if the user enters a username that does not exist.
 
 <!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
 ## Lisence 
