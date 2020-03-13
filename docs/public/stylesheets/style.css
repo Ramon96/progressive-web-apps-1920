@@ -83,7 +83,7 @@ select:hover {
 
 .topside form input[type=text] {
     background: transparent;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #000;
     border-right: none;
     border-left: none;
     border-top: none;

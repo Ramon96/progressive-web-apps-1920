@@ -61,4 +61,9 @@ router.post('/search', function (req, res, next) {
     res.redirect("/search/" + req.body.summonername);
 });
 
+router.post('/filter', function (req, res, next) {
+    res.send("hdsfa " + req.body.champion);
+    console.log("hallo")
+});
+
 module.exports = router;

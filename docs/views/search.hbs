@@ -1,6 +1,6 @@
 <h2>{{feedback}}</h2>
-<form action="">
-<select>
+<form action="/filter" method="POST">
+<select name="champion">
     {{#each championlist}}
     <option value="{{this}}">{{this}}</option>
     {{/each}}
