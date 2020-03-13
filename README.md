@@ -24,21 +24,21 @@ This project also makes use of a .env file. Ask the developer for its content.
 
 <!-- ...but how does one use this project? What are its features 🤔 -->
 ## Feature's
--[x] Search player
--[x] Filter trough champions
--[x] view the match in details
+- [x] Search player
+- [x] Filter trough champions
+- [x] view the match in details
 
 <!-- What external data source is featured in your project and what are its properties 🌠 -->
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 ## Checklist
--[x] Express installation
--[x] Adding image's
--[x] improve the styling.
--[ ] make the filter system server sided when javascript is disabled
--[ ] show a loading state when the program is fetching data
--[ ] add a manifest.json
--[ ] Make an actor diagram.
--[ ] Make an interaction diagram.
+- [x] Express installation
+- [x] Adding image's
+- [x] improve the styling.
+- [ ] make the filter system server sided when javascript is disabled
+- [ ] show a loading state when the program is fetching data
+- [ ] add a manifest.json
+- [ ] Make an actor diagram.
+- [ ] Make an interaction diagram.
 
 <!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
