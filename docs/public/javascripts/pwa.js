@@ -13,5 +13,7 @@
     }
     
     const filter = document.getElementsByTagName("select")[0];
-    filter.addEventListener("change", onSelect);
+    if(filter){
+        filter.addEventListener("change", onSelect);
+    }
 })()

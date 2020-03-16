@@ -1,0 +1,22 @@
+{
+    "short_name": "PWA",
+    "name": "Progressive web apps",
+    "description": "With this web app you are able to search your league of legends friends and see their match history",
+    "icons": [
+      {
+        "src": "/images/app/pwaSm.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/images/app/pwaMd.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#bbddf8",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#bbddf8"
+  }

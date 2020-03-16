@@ -22,9 +22,9 @@ After that use your CLI to navigate to thet project and hit `npm install` to ins
 
 This project also makes use of a .env file. Ask the developer for its content.
 
-## Building
+## Deployement
 
-To build the project, navigate to the root folder of this project and use the command.
+To deploy the project, navigate to the root folder of this project and use the command.
 
 `git subtree push --prefix docs heroku master` 
 
