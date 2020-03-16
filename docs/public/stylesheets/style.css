@@ -113,7 +113,6 @@ select:hover {
         -7px -7px 15px #caefff;
     margin-left: 25px;
 
-
 }
 
 .topside form button[type=submit]:hover {
@@ -221,6 +220,12 @@ footer {
 footer p {
     width: 80%;
     margin: auto;
+}
+
+
+
+.hidden{ 
+    display: none;
 }
 
 

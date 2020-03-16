@@ -61,9 +61,37 @@ router.post('/search', function (req, res, next) {
     res.redirect("/search/" + req.body.summonername);
 });
 
-router.post('/filter', function (req, res, next) {
-    res.send("hdsfa " + req.body.champion);
-    console.log("hallo")
+router.get('/filter/', function (req, res, next) {
+    // res.send("hdsfa " + req.query.champion + req.query.username);
+
+    // console.log("hallo")
+
+    const summoner = req.query.username;
+    console.log(summoner)
+    getData.matchHistory(summoner)
+    .then(data => {
+        const champList = data.map(match => {
+            return match.championData.name
+        })
+        const uniqueList = createFilter(champList);
+
+
+        const filtered = data.filter(obj => {
+            if (obj.championData.name == req.query.champion) {
+                return true;
+            }
+        })
+    
+        res.render("search", {
+            title: "Search results",
+            feedback: "Summoner: " + summoner,
+            data: filtered,
+            username: summoner,
+            championlist: uniqueList
+        });
+
+    })
+
 });
 
 module.exports = router;
