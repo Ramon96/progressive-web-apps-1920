@@ -14,7 +14,9 @@
     
     const filter = document.getElementsByTagName("select")[0];
     const submit = document.querySelector('#filtersubmit');
+    if(submit){
     submit.classList.add('hidden');
+    }
     if(filter){
         filter.addEventListener("change", onSelect);
     }

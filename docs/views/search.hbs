@@ -1,6 +1,7 @@
 <h2>{{feedback}}</h2>
+    <label for="filterchampion">Filter on champions</label>
 <form action="/filter" method="GET">
-    <select name="champion">
+    <select id="filterchampion" name="champion">
         {{#each championlist}}
         <option value="{{this}}">{{this}}</option>
         {{/each}}

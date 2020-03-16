@@ -1,10 +1,10 @@
-  <div class="topside">
-    <h1>{{title}}</h1>
-    <label>
+<div class="topside">
+  <h1>{{title}}</h1>
+  <label for="searchText">
+    Search summoner</label>
     <form id="searchSummoner" action="/search" method="POST">
-    <input name="summonername" id="searchText" placeholder="Summoner name" type="text"></label>
-    <button type="submit">Search</button>
+      <input name="summonername" id="searchText" placeholder="Summoner name" type="text">
+  <button type="submit">Search</button>
   </form>
-  </label>
-    {{{body}}}
+  {{{body}}}
 </div>

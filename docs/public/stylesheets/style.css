@@ -30,6 +30,14 @@ select:hover {
     cursor: pointer;
 }
 
+label{
+    display: block;
+    text-align: center;
+    font-family: inherit;
+    margin-bottom: 2px;
+    font-size: 1.3em;
+}
+
 #preloader {
     position: absolute;
     width: 100%;
