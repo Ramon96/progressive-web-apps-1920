@@ -41,9 +41,9 @@ To deploy the project, navigate to the root folder of this project and use the c
 - [x] Express installation
 - [x] Adding image's
 - [x] improve the styling.
-- [ ] make the filter system server sided when javascript is disabled
-- [ ] show a loading state when the program is fetching data
-- [ ] add a manifest.json
+- [x] add a manifest.json
+- [x] make the filter system server sided when javascript is disabled
+- [ ] show a loading state when the program is fetching data (skeleton ui maybe?)
 - [ ] Make an actor diagram.
 - [ ] Make an interaction diagram.
 - [ ] Error handling, what if the user enters a username that does not exist.
