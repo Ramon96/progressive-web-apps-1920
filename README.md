@@ -1,55 +1,54 @@
 # Progressive Web Apps @cmda-minor-web · 2019-2020
 
-In this course we will convert the client side web application previously made at the OBA into a server side rendered application. We also add functionalities based on the Service Worker and turn the application into a Progressive Web App. Ultimately we are going to implement a series of optimisations to improve the performance of the application.  
-
-## Learning goals
-- _You understand the difference between client side and server side rendering and you can apply server side rendering
-in your application_
-- _You understand how a Service Worker works and you can implement it in your application._
-- _You understand how the critical render path works and how you can optimize it for a better runtime and / or perceived performance._
-
-[Rubric](https://docs.google.com/spreadsheets/d/e/2PACX-1vSc48v1nrjcwH0llcTd68xyK7f2fDC2UL4d6h4ZNW3DU8ucez6ZOHiId1XSX0RP5ByvLC8p5pVUGZT4/pubhtml)
-
-## Program
-
-### Week 1 - Server Side Rendering 📡
-
-Goal: Render web pages server side
-
-[Exercises](https://github.com/cmda-minor-web/progressive-web-apps-1920/blob/master/course/week-1.md)  
-[Slides](...)  
-[The Web landscape](...)  
-
-
-### Week 2 - Progressive Web App 🚀
-
-Goals: Convert application to a Progressive Web App
-
-[Opdrachten](https://github.com/cmda-minor-web/progressive-web-apps-1920/blob/master/course/week-2.md)  
-[Slides](...)
-
-
-### Week 2 - Critical Rendering Path 📉 
-
-Doel: Optimize the Critical Rendering Path   
-[Opdrachten](https://github.com/cmda-minor-web/progressive-web-apps-1920/blob/master/course/week-3.md)  
-[Slides](...)
-
-
 <!-- Add a link to your live demo in Github Pages 🌐-->
+## Live demo
+Link to live demo: [https://progressive-web-apps.herokuapp.com/](https://progressive-web-apps.herokuapp.com/)
 
 <!-- ☝️ replace this description with a description of your own work -->
+## Description
+During Progressive Web Apps i continue to work on my web app from scratch project and make it progressive. The reason im not using my Oba project is because I made an Voice interface using google assistance there. 
 
 <!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
 
 <!-- Maybe a table of contents here? 📚 -->
 
 <!-- How about a section that describes how to install this project? 🤓 -->
+## Installation
+To install the project clone to project usining 
+
+`git clone https://github.com/Ramon96/progressive-web-apps-1920.git`
+
+After that use your CLI to navigate to thet project and hit `npm install` to install the used depedencie's
+
+This project also makes use of a .env file. Ask the developer for its content.
+
+## Building
+
+To build the project, navigate to the root folder of this project and use the command.
+
+`git subtree push --prefix docs heroku master` 
 
 <!-- ...but how does one use this project? What are its features 🤔 -->
+## Feature's
+- [x] Search player
+- [x] Filter trough champions
+- [x] view the match in details
 
 <!-- What external data source is featured in your project and what are its properties 🌠 -->
 
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
+## Checklist
+- [x] Express installation
+- [x] Adding image's
+- [x] improve the styling.
+- [ ] make the filter system server sided when javascript is disabled
+- [ ] show a loading state when the program is fetching data
+- [ ] add a manifest.json
+- [ ] Make an actor diagram.
+- [ ] Make an interaction diagram.
+- [ ] Error handling, what if the user enters a username that does not exist.
 
 <!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+## Lisence 
+This project makes use of the MIT License
+[License](https://github.com/Ramon96/progressive-web-apps-1920/blob/master/LICENSE)
