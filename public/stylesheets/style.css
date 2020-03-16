@@ -244,5 +244,9 @@ footer p {
         grid-row-gap: 15px;
         grid-column-gap: 15px;
     }
-    
+
+    .topside form button[type=submit] {
+    display: block;
+    margin: auto;
+    }
 }
