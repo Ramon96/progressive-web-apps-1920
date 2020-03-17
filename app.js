@@ -10,6 +10,7 @@ var hbs = require('express-handlebars');
 var indexRouter = require('./routes/index');
 var searchRouter = require('./routes/search');
 var matchRouter = require('./routes/match');
+var offlineRouter = require('./routes/offline');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(indexRouter);
 app.use(searchRouter);
 app.use(matchRouter);
+app.use(offlineRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

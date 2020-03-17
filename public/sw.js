@@ -1,10 +1,11 @@
-const cache_name = "pwa-cache";
+const cache_name = "pwa-cache4";
 const cached_urls = ([
-    '/',
+    '/offline',
     '/manifest-webmanifest.json',
     '/images/app/pwaMd.png',
     'images/app/pwaSm.png',
     '/javascripts/pwa.js',
+    '/javascripts/offline.js',
     '/stylesheets/style.css'
 ]);
 
@@ -17,21 +18,60 @@ self.addEventListener('install', function (e) {
     )
 })
 
-self.addEventListener('fetch', function (e) {
-    e.respondWith(
-        caches.open(cache_name)
-        .then(function (cache) {
-            return cache.match(e.request)
-                .then(function (response) {
-                    const fetchPromise = fetch(e.request).then(function (networkResponse) {
-                        cache.put(e.request, networkResponse.clone());
-                        return networkResponse;
-                    })
-                    return response || fetchPromise;
+
+self.addEventListener('fetch', function(e){
+    if(isCoreGetRequest(e.request)){
+        e.respondWith(
+            caches.open(cache_name)
+                .then(cache => cache.match(e.request.url))
+        )
+    }
+
+    else if(isHtmlGetRequest(e.request)){
+        e.respondWith(
+            caches.open(cache_name)
+                .then(cache => cache.match(e.request.url))
+                .then(response => response ? response : fetchAndCache(e.request, cache_name))
+                .catch(e => { return caches.open(cache_name)
+                    .then(cache => {
+                        return cache.match('/offline')
+                    }) 
                 })
-        })
-    )
+        )
+    }
 })
+
+
+// self.addEventListener('fetch', function(e){
+//     e.respondWith(
+//         fetch(e.request)
+//             .then((res)=>{
+//                 return caches.open(cache_name)
+//                     .then(cache =>{
+//                         cache.put(e.request.url, res.clone());
+//                         return res
+//                     })
+//             }).catch(err => {
+//                 return caches.match(e.request);
+//             })
+//     )
+// }).catch()
+
+// self.addEventListener('fetch', function (e) {
+//     e.respondWith(
+//         caches.open(cache_name)
+//         .then(function (cache) {
+//             return cache.match(e.request)
+//                 .then(function (response) {
+//                     const fetchPromise = fetch(e.request).then(function (networkResponse) {
+//                         cache.put(e.request, networkResponse.clone());
+//                         return networkResponse;
+//                     })
+//                     return response || fetchPromise;
+//                 })
+//         })
+//     )
+// })
 
 // self.addEventListener('fetch', function(e){
 //     e.respondWith(
@@ -48,3 +88,29 @@ self.addEventListener('message', function (e) {
         self.skipWaiting();
     }
 })
+
+function fetchAndCache(request, cacheName) {
+    return fetch(request)
+      .then(response => {
+        if (!response.ok) {
+          throw new TypeError('Bad response status');
+        }
+  
+        const clone = response.clone()
+        caches.open(cacheName).then((cache) => cache.put(request, clone))
+        return response
+      })
+  }
+
+function isHtmlGetRequest(request) {
+    return request.method === 'GET' && (request.headers.get('accept') !== null && request.headers.get('accept').indexOf('text/html') > -1);
+  }
+
+  function isCoreGetRequest(request) {
+    return request.method === 'GET' && cached_urls.includes(getPathName(request.url));
+  }
+
+  function getPathName(requestUrl) {
+    const url = new URL(requestUrl);
+    return url.pathname;
+  }
