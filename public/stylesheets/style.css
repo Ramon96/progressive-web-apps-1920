@@ -231,9 +231,21 @@ footer p {
 }
 
 
+#update{
+    visibility: hidden;
+}
+
+#update.visible{
+    visibility: visible;
+    transition: .4s;
+}
 
 .hidden{ 
     display: none;
+}
+
+.visible{ 
+    display: block;
 }
 
 

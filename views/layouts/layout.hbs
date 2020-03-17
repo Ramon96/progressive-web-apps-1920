@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="Description" content="Search your league of legends friends using this web application.">
-  <meta name="theme-color" content="#bbddf8"/>
+  <meta name="theme-color" content="#bbddf8" />
   <title>{{ title }}</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="manifest" href="/manifest-webmanifest.json">
@@ -14,17 +14,71 @@
 </head>
 
 <body>
+  {{!-- maak hier een parial van --}}
+  <div id="update">
+    adsjfklasjdflkaj
+    <button id="updateButton">Update</button>
+  </div>
   {{>searchForm}}
   {{>footer}}
+
+
   <script src="/javascripts/pwa.js"></script>
   <script>
-     if('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('/sw.js')
-        .then(function(){
-          console.log("Service worker is registered")
+    let updateBar = document.getElementById('update');
+    let updateButton = document.getElementById('updateButton');
+    let newWorker;
+
+    updateButton.addEventListener('click', function () {
+      newWorker.postMessage({ action: 'skipWaiting' });
+    })
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then((reg) => {
+
+          // als de sw cache naam een nieuwe versie
+          reg.addEventListener('updatefound', () => {
+            newWorker = reg.installing;
+       
+            
+            newWorker.addEventListener('statechange', () => {
+              switch (newWorker.state) {
+
+                case 'installed':
+                  if (navigator.serviceWorker.controller) {
+                    showUpdate();
+                  }
+                  break;
+              }
+              
+
+            })
+
+          })
+        }).catch((err) => {
+          console.log("Registration failed: " + err)
         })
-    } 
+
+      let refreshed;
+      navigator.serviceWorker.addEventListener('controllerchange', function () {
+    console.log('er is refreshed')
+
+        if (refreshed) {
+          return;
+        }
+        window.location.reload();
+        refreshed = true;
+      })
+    }
+
+
+
+
+    function showUpdate() {
+      updateBar = document.getElementById('update');
+      updateBar.className = "visible";
+    }
 
 
   </script>

@@ -17,29 +17,18 @@ self.addEventListener('install', function(e){
     )
 })
 
-
-// self.addEventListener('fetch', function(e){
-//     e.respondWith(
-//         caches.open(cache_name)
-//             .then(function(cache){
-//                 return cache.match(e.request)
-//                         .then(function(response){
-//                             const fetchPromise = fetch(e.request).then(function(networkResponse){
-//                                 cache.put(e.request, networkResponse.clone());
-//                                 return networkResponse;
-//                             })
-//                             return response || fetchPromise;
-//                         })
-//             })
-//     )
-// })
-
 self.addEventListener('fetch', function(e){
-    console.log(e.request.url);
-
     e.respondWith(
         caches.match(e.request).then(function(response) {
           return response || fetch(e.request);
         })
       );
+})
+
+
+self.addEventListener('message', function(e){
+    console.log('er is geupdate')
+    if(e.data.action === 'skipWaiting'){
+        self.skipWaiting();
+    }
 })
