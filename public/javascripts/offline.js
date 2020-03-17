@@ -13,7 +13,15 @@
             }
         })
         
-    }).then(res => console.log(res))
+    }).then(res => {
+        const ul = document.getElementById('url');
+        res.map(item => {
+            console.log(item.url)
+                const el = document.createElement("li");
+                el.innerHTML = `<a href="${item.url}">${item.url}</a>`;
+                ul.appendChild(el);
+        })
+    })
 
 
 }())
