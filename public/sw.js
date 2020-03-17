@@ -8,27 +8,43 @@ const cached_urls = ([
     '/stylesheets/style.css'
 ]);
 
-self.addEventListener('install', function(e){
+self.addEventListener('install', function (e) {
     e.waitUntil(
         caches.open(cache_name)
-        .then(function(cache){
+        .then(function (cache) {
             return cache.addAll(cached_urls);
         })
     )
 })
 
-self.addEventListener('fetch', function(e){
+self.addEventListener('fetch', function (e) {
     e.respondWith(
-        caches.match(e.request).then(function(response) {
-          return response || fetch(e.request);
+        caches.open(cache_name)
+        .then(function (cache) {
+            return cache.match(e.request)
+                .then(function (response) {
+                    const fetchPromise = fetch(e.request).then(function (networkResponse) {
+                        cache.put(e.request, networkResponse.clone());
+                        return networkResponse;
+                    })
+                    return response || fetchPromise;
+                })
         })
-      );
+    )
 })
 
+// self.addEventListener('fetch', function(e){
+//     e.respondWith(
+//         caches.match(e.request).then(function(response) {
+//           return response || fetch(e.request);
+//         })
+//       );
+// })
 
-self.addEventListener('message', function(e){
+
+self.addEventListener('message', function (e) {
     console.log('er is geupdate')
-    if(e.data.action === 'skipWaiting'){
+    if (e.data.action === 'skipWaiting') {
         self.skipWaiting();
     }
 })
