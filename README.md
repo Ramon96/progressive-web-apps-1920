@@ -1,5 +1,35 @@
 # Progressive Web Apps @cmda-minor-web · 2019-2020
 
+## Feedback
+
+Er is niet echt feedback waar ik naar opzoek ben maar ik wil wel delen waar ik mee bezig ben geweest deze week
+
+### trots1
+Wanneer de service worker een nieuwe naam heeft verschrijnt er een update knop, dit is super nice. Als ik namelijk m'n website overhaul kan ik me service worker een nieuwe versie geven.
+De gebruiker laadt dan nog wel de gecachde versie. Daarna laat de worker een bericht zien van 'jo er is een nieuwe update van de site, je kijkt nog naar een oude versie. Druk op de knop om de nieuwe versie binnen te halen'
+
+### trots2
+Het is me ook gelukt om met de service worker een network first approach aan te pakken. Wanneer jij een pagina bezoekt word de pagina in de cache opgeslagen. Wanneer je offline bent word je naar een offline pagina gestuurd. Daar vind je een lijst me alle opgeslagen url's die de gebruiker kan bezoeken.
+
+### minitrots3
+Ik heb ook native share gehanteerd en het werkt. Laat de app net meer appie voelen.
+
+Er zij nog wel een aantal punten die ik nog echt in me pwa project moet stoppen voor maandag (wat ik dus dit weekend en vandaag ga implemteren)
+
+* De update knop wanneer er een nieuwe versie van de site is gevonden kan nog wat styling en toepaselijkere tekst nodig
+* de offline pagina kan ook een likje verf gebruiken
+* Webpack intergratie gaat dit weekend erin komen
+* De site is toe aan een home button
+* Tijdens mijn implementatie van de service worker en share button heb ik alles zomaar in de index.html gekwakt. Nu ik eruit gekomen ben lijkt het mij een goed idee om dit netjes in eigen scripts te stoppen
+* De native share button moet alleen te zien zijn, als deze ook gesupport word. De object detection zit al in de code, laat ik er nu dan ook maar iets mee doen. (ook kan het wat styling gebruiken)
+* een favicon toevoegen om die irritante error weg te halen :)
+* Het zou ook chill zijn voor de gebruiker om aan te geven dat ze nu offline zijn. 
+* De readme kan ook een grote update gebruiken, ik heb als tip mee gekregen om ff bij joan en lien te kijken. 
+
+Dit is een aardige lijst, maar al met al zullen deze taken mij niet al te veel tijd kosten om  te implementeren (lukt me alleen niet voor 14:00)
+
+* bonus: skeleton ui toevoegen als de images nog geladen moeten worden.
+
 <!-- Add a link to your live demo in Github Pages 🌐-->
 ## Live demo
 Link to live demo: [https://progressive-web-apps.herokuapp.com/](https://progressive-web-apps.herokuapp.com/)
