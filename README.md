@@ -49,6 +49,6 @@ To deploy the project, navigate to the root folder of this project and use the c
 - [ ] Error handling, what if the user enters a username that does not exist.
 
 <!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
-## Lisence 
+## License 
 This project makes use of the MIT License
 [License](https://github.com/Ramon96/progressive-web-apps-1920/blob/master/LICENSE)
