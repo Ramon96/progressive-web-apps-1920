@@ -18,8 +18,8 @@ self.addEventListener('install', function (e) {
     )
 })
 
-// https://github.com/decrek/progressive-web-apps-1920/blob/master/examples/movies-example/src/service-worker.js
 // I made use of the functions Declan wrote: fetch and cache, is htmlgetrequest and iscoregetrequest
+// https://github.com/decrek/progressive-web-apps-1920/blob/master/examples/movies-example/src/service-worker.js
  
 self.addEventListener('fetch', function(e){
     if(isCoreGetRequest(e.request)){

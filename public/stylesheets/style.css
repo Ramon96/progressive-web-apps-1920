@@ -130,7 +130,33 @@ label{
         -7px -7px 15px #caefff;
 }
 
+#share{
+    background: transparent;
+    border-right: None;
+    border-bottom: none;
+    border-left: none;
+    border-top: none;
+    font-size: 1.5em;
+    transition: .4s;
+    padding: 10px 10px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #c8ecff, #a8c7df);
+    box-shadow: 7px 7px 15px #accbe4,
+        -7px -7px 15px #caefff;
+    display: block;
+    margin: auto;
+}
 
+#share:hover{
+    cursor: pointer;
+    background: linear-gradient(145deg, #a8c7df, #c8ecff);
+    box-shadow: 7px 7px 15px #accbe4,
+        -7px -7px 15px #caefff;
+}
+
+#share.hidden{
+    display: none;
+}
 
 
 main {

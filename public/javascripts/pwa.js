@@ -7,8 +7,6 @@
             .then(html => {
                 const main = document.querySelector('main');
                 main.innerHTML = html
-                //Todo: improve this. maybe use createElement from html
-                //Todo make submit possible so it works without javascript.
             })
     }
     
@@ -31,7 +29,8 @@
                 })
              }
              else{
-                 //fallback share
+                 //fallback share]
+                shareButton.classList.remove('hidden')
                  console.log('no support')
              }
          })

@@ -14,13 +14,9 @@
 </head>
 
 <body>
-  <!-- TODO: maak hier een parial van -->
-  <div id="update">
-    adsjfklasjdflkaj
-    <button id="updateButton">Update</button>
-  </div>
+  
+  {{>updateButton}}
 
-  <button id="share">Share</button>
 
   {{>searchForm}}
   {{>footer}}
@@ -28,6 +24,7 @@
 
   <script src="/javascripts/pwa.js"></script>
   <script>
+    // Service worker registration
     let updateBar = document.getElementById('update');
     let updateButton = document.getElementById('updateButton');
     let newWorker;
@@ -65,7 +62,6 @@
 
       let refreshed;
       navigator.serviceWorker.addEventListener('controllerchange', function () {
-    console.log('er is refreshed')
 
         if (refreshed) {
           return;
