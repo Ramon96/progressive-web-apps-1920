@@ -1,6 +1,6 @@
 (function () {
 
-    caches.open('pwa-cache4').then(urls => {
+    caches.open('pwa-cache5').then(urls => {
         return urls.keys().then(res => {
            return res;
         })

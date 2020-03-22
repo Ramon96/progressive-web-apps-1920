@@ -259,11 +259,28 @@ footer p {
 
 #update{
     visibility: hidden;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    text-align: center;
+    padding: 10px 0;
 }
 
 #update.visible{
     visibility: visible;
     transition: .4s;
+}
+
+#updateButton{
+    border-radius: 15px;
+    background: white;
+    border: none;
+    padding: 5px 10px;
+    transition: .4s;
+}
+
+#updateButton:hover{
+    cursor: pointer;
+    opacity: .4;
 }
 
 .hidden{ 

@@ -19,21 +19,22 @@
          const title = window.document.title;
          const url = window.document.location.href;
 
+         if(navigator.share){
+        shareButton.classList.remove('hidden')
+
          shareButton.addEventListener('click', () => {
-             if(navigator.share){
                 navigator.share({
                     title: `${title}`,
                     url: `${url}`
                 }).then(() =>{
                     console.log('Share succes')
                 })
-             }
-             else{
-                 //fallback share]
-                shareButton.classList.remove('hidden')
-                 console.log('no support')
-             }
-         })
+            })
+        }
+        else{
+           //fallback share]
+
+        }
     }
     if(submit){
     submit.classList.add('hidden');
