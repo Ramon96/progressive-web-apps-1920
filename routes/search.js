@@ -3,11 +3,12 @@ var router = express.Router();
 const getData = require('../helpers/data/getData');
 const createFilter = require('../helpers/createFilter');
 
-router.get('/search/:id', function (req, res, next) {
+
+router.get('/search', function (req, res, next) {
 
 
-    const summoner = req.params.id;
-    getData.matchHistory(req.params.id)
+    const summoner = req.query.summonername;
+    getData.matchHistory(summoner)
         .then(data => {
             const champList = data.map(match => {
                 return match.championData.name

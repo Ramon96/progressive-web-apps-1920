@@ -32,7 +32,7 @@
             })
         }
         else{
-           //fallback share]
+           //native share is not supported display fallback inside this logic
 
         }
     }

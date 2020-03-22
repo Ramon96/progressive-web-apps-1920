@@ -1,4 +1,4 @@
-const cache_name = "pwa-cache5";
+const cache_name = "pwa-cache12";
 const cached_urls = ([
     '/offline',
     '/manifest-webmanifest.json',
@@ -18,11 +18,14 @@ self.addEventListener('install', function (e) {
     )
 })
 
+
+
 // I made use of the functions Declan wrote: fetch and cache, is htmlgetrequest and iscoregetrequest
 // https://github.com/decrek/progressive-web-apps-1920/blob/master/examples/movies-example/src/service-worker.js
  
 self.addEventListener('fetch', function(e){
     if(isCoreGetRequest(e.request)){
+        console.log('is core')
         e.respondWith(
             caches.open(cache_name)
                 .then(cache => cache.match(e.request.url))
@@ -30,17 +33,20 @@ self.addEventListener('fetch', function(e){
     }
 
     else if(isHtmlGetRequest(e.request)){
+        console.log('is html')
         e.respondWith(
             caches.open(cache_name)
                 .then(cache => cache.match(e.request.url))
                 .then(response => response ? response : fetchAndCache(e.request, cache_name))
                 .catch(e => { return caches.open(cache_name)
                     .then(cache => {
-                        return cache.match('/offline')
+                        cache.match('/offline')
+
                     }) 
                 })
         )
     }
+
 })
 
 
@@ -106,13 +112,14 @@ function fetchAndCache(request, cacheName) {
 
 function isHtmlGetRequest(request) {
     return request.method === 'GET' && (request.headers.get('accept') !== null && request.headers.get('accept').indexOf('text/html') > -1);
-  }
+}
 
-  function isCoreGetRequest(request) {
+
+function isCoreGetRequest(request) {
     return request.method === 'GET' && cached_urls.includes(getPathName(request.url));
-  }
+}
 
-  function getPathName(requestUrl) {
+function getPathName(requestUrl) {
     const url = new URL(requestUrl);
     return url.pathname;
-  }
+}
