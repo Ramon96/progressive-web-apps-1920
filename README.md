@@ -14,22 +14,6 @@ Het is me ook gelukt om met de service worker een network first approach aan te 
 ### minitrots3
 Ik heb ook native share gehanteerd en het werkt. Laat de app net meer appie voelen.
 
-Er zij nog wel een aantal punten die ik nog echt in me pwa project moet stoppen voor maandag (wat ik dus dit weekend en vandaag ga implemteren)
-
-* De update knop wanneer er een nieuwe versie van de site is gevonden kan nog wat styling en toepaselijkere tekst nodig
-* de offline pagina kan ook een likje verf gebruiken
-* Webpack intergratie gaat dit weekend erin komen
-* De site is toe aan een home button
-* Tijdens mijn implementatie van de service worker en share button heb ik alles zomaar in de index.html gekwakt. Nu ik eruit gekomen ben lijkt het mij een goed idee om dit netjes in eigen scripts te stoppen
-* De native share button moet alleen te zien zijn, als deze ook gesupport word. De object detection zit al in de code, laat ik er nu dan ook maar iets mee doen. (ook kan het wat styling gebruiken)
-* een favicon toevoegen om die irritante error weg te halen :)
-* Het zou ook chill zijn voor de gebruiker om aan te geven dat ze nu offline zijn. 
-* De readme kan ook een grote update gebruiken, ik heb als tip mee gekregen om ff bij joan en lien te kijken. 
-
-Dit is een aardige lijst, maar al met al zullen deze taken mij niet al te veel tijd kosten om  te implementeren (lukt me alleen niet voor 14:00)
-
-* bonus: skeleton ui toevoegen als de images nog geladen moeten worden.
-
 <!-- Add a link to your live demo in Github Pages 🌐-->
 ## Live demo
 Link to live demo: [https://progressive-web-apps.herokuapp.com/](https://progressive-web-apps.herokuapp.com/)
@@ -73,10 +57,16 @@ To deploy the project, navigate to the root folder of this project and use the c
 - [x] improve the styling.
 - [x] add a manifest.json
 - [x] make the filter system server sided when javascript is disabled
+- [x] Update button when a new version is available
+- [x] Offline page
+- [x] Native share (when supported)
+- [x] Feedback when the user is visiting in offline mode
 - [ ] show a loading state when the program is fetching data (skeleton ui maybe?)
 - [ ] Make an actor diagram.
 - [ ] Make an interaction diagram.
 - [ ] Error handling, what if the user enters a username that does not exist.
+- [ ] Webpack intergration
+- [ ] Adding a favicon
 
 <!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
 ## License 
