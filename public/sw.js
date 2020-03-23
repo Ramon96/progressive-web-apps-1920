@@ -1,4 +1,4 @@
-const cache_name = "pwa-cache15";
+const cache_name = "pwa-cache16";
 const cached_urls = ([
     '/offline',
     '/manifest-webmanifest.json',
@@ -41,7 +41,7 @@ self.addEventListener('fetch', function(e){
                 .catch(e => { return caches.open(cache_name)
                     .then(cache => {
                         cache.match('/offline')
-
+                        console.log('ben ik hier?')
                     }) 
                 })
         )
