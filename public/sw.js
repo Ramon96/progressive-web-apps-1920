@@ -1,4 +1,4 @@
-const cache_name = "pwa-cache16";
+const cache_name = "pwa-cache24";
 const cached_urls = ([
     '/offline',
     '/manifest-webmanifest.json',
@@ -23,25 +23,25 @@ self.addEventListener('install', function (e) {
 // I made use of the functions Declan wrote: fetch and cache, is htmlgetrequest and iscoregetrequest
 // https://github.com/decrek/progressive-web-apps-1920/blob/master/examples/movies-example/src/service-worker.js
  
-self.addEventListener('fetch', function(e){
+
+// TODO: NTH ETAG
+// TODO: ASYNC AWAIT ?
+self.addEventListener('fetch', e =>{
     if(isCoreGetRequest(e.request)){
-        console.log('is core')
         e.respondWith(
             caches.open(cache_name)
                 .then(cache => cache.match(e.request.url))
         )
-    }
-
-    else if(isHtmlGetRequest(e.request)){
-        console.log('is html')
+    } else if(isHtmlGetRequest(e.request)){
         e.respondWith(
             caches.open(cache_name)
                 .then(cache => cache.match(e.request.url))
                 .then(response => response ? response : fetchAndCache(e.request, cache_name))
-                .catch(e => { return caches.open(cache_name)
+                .catch(e => { 
+                    return caches.open(cache_name)
                     .then(cache => {
-                        cache.match('/offline')
-                        console.log('ben ik hier?')
+                        return cache.match('/offline')
+
                     }) 
                 })
         )
