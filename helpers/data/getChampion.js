@@ -2,7 +2,7 @@
 
 
 function  getChampion(championId){
-    const championData = require("../../public/champion.json");
+    const championData = require("../../src/champion.json");
     var myData = Object.keys(championData.data).map(key => {
         return championData.data[key];
     })

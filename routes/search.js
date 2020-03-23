@@ -8,6 +8,7 @@ router.get('/search', function (req, res, next) {
 
 
     const summoner = req.query.summonername;
+    console.log(summoner)
     getData.matchHistory(summoner)
         .then(data => {
             const champList = data.map(match => {
@@ -17,10 +18,13 @@ router.get('/search', function (req, res, next) {
 
             if (req.query.pwa) {
                 const filtered = data.filter(obj => {
+                        console.log(obj.championData.name)
                     if (obj.championData.name == req.query.champion) {
+                        console.log('return')
                         return true;
                     }
                 })
+                console.log(filtered)
                 res.render("partials/matches", {
                     layout: false,
                     title: "Search results",

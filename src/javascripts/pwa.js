@@ -1,8 +1,9 @@
+import getOfflineUrls from "./offline.js";
+
 (function(){
     const onSelect = (e) =>{
         const selected = filter.value;
-        history.replaceState({}, '', '?champion=' + selected);
-        fetch(window.location.href + '&pwa=true')
+        fetch(window.location.href + '&champion=' + selected + '&pwa=true')
             .then(res => res.text())
             .then(html => {
                 const main = document.querySelector('main');
@@ -50,5 +51,9 @@
       } else {
         console.log('offline');
         onlinestatus.classList.add('visible')
+      }
+
+      if(document.querySelector('#url')){
+        getOfflineUrls(); 
       }
 })()

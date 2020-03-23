@@ -1,6 +1,5 @@
-(function () {
-
-    caches.open('pwa-cache24').then(urls => {
+function getOfflineUrls(){
+    caches.open('pwa-cache25').then(urls => {
         return urls.keys().then(res => {
            return res;
         })
@@ -21,5 +20,6 @@
         })
     })
 
+}
 
-}())
+export default getOfflineUrls;
