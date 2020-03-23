@@ -1,4 +1,4 @@
-const cache_name = "pwa-cache12";
+const cache_name = "pwa-cache15";
 const cached_urls = ([
     '/offline',
     '/manifest-webmanifest.json',

@@ -14,6 +14,7 @@
     const submit = document.querySelector('#filtersubmit');
 
     const shareButton = document.getElementById("share");
+    const onlinestatus = document.getElementById("onlinestatus");
 
     if(shareButton){
          const title = window.document.title;
@@ -42,4 +43,12 @@
     if(filter){
         filter.addEventListener("change", onSelect);
     }
+
+
+    if (navigator.onLine) {
+        console.log('online');
+      } else {
+        console.log('offline');
+        onlinestatus.classList.add('visible')
+      }
 })()

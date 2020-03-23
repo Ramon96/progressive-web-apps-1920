@@ -258,7 +258,7 @@ footer p {
 
 
 #update{
-    visibility: hidden;
+    display: none;
     width: 100%;
     background: rgba(0,0,0,0.5);
     text-align: center;
@@ -266,7 +266,7 @@ footer p {
 }
 
 #update.visible{
-    visibility: visible;
+    display: block;
     transition: .4s;
 }
 
@@ -278,9 +278,27 @@ footer p {
     transition: .4s;
 }
 
+#onlinestatus{
+    display: none;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    text-align: center;
+    padding: 10px 0;
+}
+
+#onlinestatus.visible{
+    display: block;
+
+    transition: .4s;
+}
+
 #updateButton:hover{
     cursor: pointer;
     opacity: .4;
+}
+
+#homeButton{
+    padding: 15px;
 }
 
 .hidden{ 
