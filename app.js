@@ -27,7 +27,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'dist'), {
+  etag: false,
+  maxAge: '31536000'
+}));
 
 
 app.locals.js = manifest['/pwa.js'];

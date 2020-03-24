@@ -1,6 +1,7 @@
 const ManifestPlugin = require('webpack-manifest-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ServiceWorkerWebpackPlugin =  require('serviceworker-webpack-plugin');
 
 module.exports = {
     module:{
@@ -45,6 +46,9 @@ module.exports = {
         new MiniCssExtractPlugin({
             // both options are optional
             filename: 'stylesheets/style.[contenthash].css',
+          }),
+          new ServiceWorkerWebpackPlugin({
+            entry: './src/sw.js',
           }),
     ]
 }

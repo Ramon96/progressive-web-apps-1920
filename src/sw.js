@@ -1,13 +1,7 @@
 const cache_name = "pwa-cache25";
 const cached_urls = ([
-    '/offline',
-    '/manifest-webmanifest.json',
-    '/images/app/pwaMd.png',
-    'images/app/pwaSm.png',
-    '/javascripts/pwa.js',
-    '/javascripts/offline.js',
-    '/stylesheets/style.css'
-]);
+    '/offline'
+]).concat(serviceWorkerOption.assets);
 
 self.addEventListener('install', function (e) {
     e.waitUntil(

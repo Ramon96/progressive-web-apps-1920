@@ -5,7 +5,7 @@ function getOfflineUrls(){
         })
     }).then( urlList => {
         return urlList.filter(key => { 
-            if(!key.url.includes('.png') &&  !key.url.includes('.css') && !key.url.includes('.json') && !key.url.includes('.js')){
+            if(!key.url.includes('.png') &&  !key.url.includes('.css') && !key.url.includes('.json') && !key.url.includes('.js') && !key.url.includes('.jpg')){
                 return key.url;
             }
         })

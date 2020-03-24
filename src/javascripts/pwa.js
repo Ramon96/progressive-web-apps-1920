@@ -1,10 +1,8 @@
 import getOfflineUrls from "./offline.js";
 import "../stylesheets/style.css";
-function importAll (r) {
-    r.keys().forEach(r);
-  }
-  
-  importAll(require.context('../images/', true, /\.(png|jp(e*)g|svg)$/));
+
+//https://webpack.js.org/guides/dependency-management/#context-module-api
+importAll(require.context('../images/', true, /\.(png|jp(e*)g|svg)$/));
 
 (function(){
     const onSelect = (e) =>{
@@ -63,3 +61,7 @@ function importAll (r) {
         getOfflineUrls(); 
       }
 })()
+
+function importAll (r) {
+    r.keys().forEach(r);
+  }
