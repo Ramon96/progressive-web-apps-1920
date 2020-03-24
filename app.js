@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 var hbs = require('express-handlebars');
+var manifest = require('./dist/manifest.json');
+
 
 var indexRouter = require('./routes/index');
 var searchRouter = require('./routes/search');
@@ -27,11 +29,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'dist')));
 
+
+app.locals.js = manifest['/pwa.js'];
+app.locals.css = manifest['/pwa.css'];
+
+
+
 // Routes
 app.use(indexRouter);
 app.use(searchRouter);
 app.use(matchRouter);
 app.use(offlineRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
