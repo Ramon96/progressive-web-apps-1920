@@ -1,7 +1,8 @@
 {
   "name": "hash mapping",
   "/pwa.css": "stylesheets/style.bc26ef579a76f9b99756.css",
-  "/pwa.js": "javascript/bundle.36ebe5562a8682d683db.js",
+  "/pwa.js": "javascript/bundle.90654ecfaf03f686eed2.js",
+  "/champion.json": "champion.json",
   "/images/Aatrox.png": "images/Aatrox.png",
   "/images/Aatrox_0.jpg": "images/Aatrox_0.jpg",
   "/images/Aatrox_1.jpg": "images/Aatrox_1.jpg",
@@ -1327,5 +1328,6 @@
   "/images/Zyra_2.jpg": "images/Zyra_2.jpg",
   "/images/Zyra_3.jpg": "images/Zyra_3.jpg",
   "/images/Zyra_4.jpg": "images/Zyra_4.jpg",
+  "/manifest-webmanifest.json": "manifest-webmanifest.json",
   "/sw.js": "sw.js"
 }

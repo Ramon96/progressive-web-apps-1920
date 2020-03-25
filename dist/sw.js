@@ -1325,8 +1325,10 @@ var serviceWorkerOption = {
     "/images/Zyra_2.jpg",
     "/images/Zyra_3.jpg",
     "/images/Zyra_4.jpg",
+    "/champion.json",
+    "/manifest-webmanifest.json",
     "/stylesheets/style.bc26ef579a76f9b99756.css",
-    "/javascript/bundle.36ebe5562a8682d683db.js"
+    "/javascript/bundle.90654ecfaf03f686eed2.js"
   ]
 };
         

@@ -4,7 +4,6 @@ var manifest = require('../dist/manifest.json');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  // res.render('index', { title: 'PWA', feedback: "If you don't play league of legends you can use my username: Yabby", css: manifest['/pwa.css'] });
   res.render('index', { title: 'PWA', feedback: "If you don't play league of legends you can use my username: Yabby"});
 });
 

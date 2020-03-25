@@ -1,5 +1,7 @@
 import getOfflineUrls from "./offline.js";
 import "../stylesheets/style.css";
+import champion from '../champion.json';
+import manifestwebmanifest from'../manifest-webmanifest.json';
 
 //https://webpack.js.org/guides/dependency-management/#context-module-api
 importAll(require.context('../images/', true, /\.(png|jp(e*)g|svg)$/));
