@@ -83,6 +83,7 @@ You can check that here [Api Status](https://developer.riotgames.com/api-status/
 - [ ] Make an actor diagram.
 - [ ] Make an interaction diagram.
 - [ ] Adding a favicon
+- [ ] Install button
 
 ## Audits
 
