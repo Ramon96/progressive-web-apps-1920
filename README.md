@@ -87,6 +87,10 @@ You can check that here [Api Status](https://developer.riotgames.com/api-status/
 ## Audits
 
 <!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+
+## Credits
+Declan rec for helping me out with the service worker. Used some functions in his example.
+
 ## License 
 This project makes use of the MIT License
 [License](https://github.com/Ramon96/progressive-web-apps-1920/blob/master/LICENSE)
