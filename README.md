@@ -1,5 +1,7 @@
 # Progressive Web Apps @cmda-minor-web · 2019-2020
 
+![screenshot of the homepage of the pwa subject](https://github.com/Ramon96/progressive-web-apps-1920/blob/master/readme-sources/pwa.png?raw=true)
+
 ## Feedback
 
 Er is niet echt feedback waar ik naar opzoek ben maar ik wil wel delen waar ik mee bezig ben geweest deze week
