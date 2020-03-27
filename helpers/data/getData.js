@@ -10,8 +10,9 @@ async function getDataMH(name) {
     const api = "https://euw1.api.riotgames.com/lol/";
     const summonerInformation = await fetchSummoner(api, apiKey, name);
     const matchHistory = await fetchMatchHistory(summonerInformation, api, apiKey);
+    console.log(matchHistory)
+
     const cleanData = cleanUp(matchHistory)
-    
 
      return cleanData;
 }

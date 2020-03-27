@@ -1,5 +1,7 @@
 var serviceWorkerOption = {
   "assets": [
+    "/images/pwaMd.png",
+    "/images/pwaSm.png",
     "/images/Aatrox.png",
     "/images/Ahri.png",
     "/images/Akali.png",
@@ -1328,7 +1330,7 @@ var serviceWorkerOption = {
     "/champion.json",
     "/manifest-webmanifest.json",
     "/stylesheets/style.bc26ef579a76f9b99756.css",
-    "/javascript/bundle.90654ecfaf03f686eed2.js"
+    "/javascript/bundle.28930e01d47d8b4ce6f0.js"
   ]
 };
         

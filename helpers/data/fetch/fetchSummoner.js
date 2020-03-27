@@ -9,6 +9,7 @@ async function fetchSummoner(api, apiKey, name){
     let summonerData = fetch(url);
     let response = await summonerData;
     let handleResponse = await response.json();
+    console.log(handleResponse)
     return handleResponse;
 }
 

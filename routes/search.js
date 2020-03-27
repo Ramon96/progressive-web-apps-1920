@@ -8,7 +8,6 @@ router.get('/search', function (req, res, next) {
 
 
     const summoner = req.query.summonername;
-    console.log(summoner)
     getData.matchHistory(summoner)
         .then(data => {
             const champList = data.map(match => {
@@ -58,6 +57,8 @@ router.get('/search', function (req, res, next) {
                     });
                 }
             }
+        }).catch(function(e){
+            res.render('index', { title: 'Oops', feedback: "The summoner you tried looking for was not found, or the API may be down at the moment. Please try again later."});
         })
 });
 
