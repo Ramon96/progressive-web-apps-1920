@@ -18,8 +18,6 @@ self.addEventListener('install', function (e) {
 // https://github.com/decrek/progressive-web-apps-1920/blob/master/examples/movies-example/src/service-worker.js
  
 
-// TODO: NTH ETAG
-// TODO: ASYNC AWAIT ?
 self.addEventListener('fetch', e =>{
     if(isCoreGetRequest(e.request)){
         e.respondWith(

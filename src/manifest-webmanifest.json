@@ -4,12 +4,12 @@
     "description": "With this web app you are able to search your league of legends friends and see their match history",
     "icons": [
       {
-        "src": "/images/app/pwaSm.png",
+        "src": "/images/pwaSm.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "/images/app/pwaMd.png",
+        "src": "/images/pwaMd.png",
         "type": "image/png",
         "sizes": "512x512"
       }
