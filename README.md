@@ -54,7 +54,11 @@ You can check that here [Api Status](https://developer.riotgames.com/api-status/
 ## Feature's
 - [x] Search player
 - [x] Filter trough champions
-- [x] view the match in details
+- [x] View the match in details
+- [x] Offline usage
+- [x] Native share (when supported)
+- [x] No javascript support
+- [x] Installable
 
 <!-- What external data source is featured in your project and what are its properties 🌠 -->
 
