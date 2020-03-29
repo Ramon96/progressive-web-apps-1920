@@ -2,19 +2,13 @@
 
 ![screenshot of the homepage of the pwa subject](https://github.com/Ramon96/progressive-web-apps-1920/blob/master/readme-sources/pwa.png?raw=true)
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
 ## Live demo
 Link to live demo: [https://progressive-web-apps.herokuapp.com/](https://progressive-web-apps.herokuapp.com/)
 
-<!-- ☝️ replace this description with a description of your own work -->
+
 ## Description
 During Progressive Web Apps i continue to work on my web app from scratch project and make it progressive. The reason im not using my Oba project is because I made an Voice interface using google assistance there. 
 
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
-
-<!-- Maybe a table of contents here? 📚 -->
-
-<!-- How about a section that describes how to install this project? 🤓 -->
 ## Installation
 To install the project clone to project usining 
 
@@ -50,7 +44,7 @@ You can check that here [Api Status](https://developer.riotgames.com/api-status/
 20 requests every 1 seconds(s)
 100 requests every 2 minutes(s)
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
+
 ## Feature's
 - [x] Search player
 - [x] Filter trough champions
@@ -60,13 +54,6 @@ You can check that here [Api Status](https://developer.riotgames.com/api-status/
 - [x] No javascript support
 - [x] Installable
 
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
-
-## Actor Diagram
-
-## Interaction Diagram
-
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 ## Checklist
 - [x] Express installation
 - [x] Adding image's
@@ -80,8 +67,6 @@ You can check that here [Api Status](https://developer.riotgames.com/api-status/
 - [x] Error handling, what if the user enters a username that does not exist.
 - [x] Webpack intergration
 - [ ] show a loading state when the program is fetching data (skeleton ui maybe?)
-- [ ] Make an actor diagram.
-- [ ] Make an interaction diagram.
 - [ ] Adding a favicon
 - [ ] Install button
 
