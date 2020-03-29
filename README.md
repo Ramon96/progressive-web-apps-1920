@@ -86,8 +86,12 @@ You can check that here [Api Status](https://developer.riotgames.com/api-status/
 - [ ] Install button
 
 ## Audits
+![audits](https://github.com/Ramon96/progressive-web-apps-1920/blob/master/readme-sources/pwa-audits.png?raw=true)
 
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+Only thing I'm losing points on is best practises
+Im not serving my content on http2 (which I dont know how to fix _yet_)
+
+![best practices](https://github.com/Ramon96/progressive-web-apps-1920/blob/master/readme-sources/bestpractices.png?raw=true)
 
 ## Credits
 Declan rec for helping me out with the service worker. Used some functions in his example.
