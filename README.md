@@ -81,6 +81,35 @@ Im not serving my content on http2 (which I dont know how to fix _yet_)
 ## Credits
 Declan rec for helping me out with the service worker. Used some functions in his example.
 
+## Conclussion 
+### Difference between client side rendering and server side rendering 
+When you load the data from the client you have to create a node for every element you want to display. However when you load the data from the server you will be able to load the data before the page is rendered and fill in a templating engine to show the data dynamically. In WAFS the client would first fetch the data (then show a boring loading bar) then create an elements for every datapoint and then display it to the user. The client was also responsible for enhancements like filtering.
+
+Now the server will get the data. show this data to the user (without the boring loading bar) and present the user the recieved data. The client is now only being used to enhance for example with filtering data.
+
+### How does a server worker work 
+A service worker is a script that runs in the background. The serice worker works seperate from the web page.
+You can use the service worker to applie differnet caching strategies, so when your website is offline the service worker will serve the user with information form the storage. 
+
+A service worker will not work when javascript is enabled. 
+
+Additional your service worker can also send push notifications  to the user and do periodic background syncs.
+
+
+I use the service worker to precache the images from the client (I don't think this was a great idea. I should only store the images when these are being used in the browsers instead of storing all of them at once)
+and to store html pages visited. When the user is offline the service worker will redirect the user to a precached offline page and display's all the pages stored in the cache. The user will be able to visit previously visited pages with ease. pretty neat.
+
+You can read the service worker [here](https://github.com/Ramon96/progressive-web-apps-1920/blob/master/src/sw.js) 
+
+### Critical rendering path
+When using a frameworks like react or vue, then everything will be rendered using javascript. But when this gets too heavy then the user will experience a long waiting time, why? Because javascript is blocking the first paint. To solve this you want to render with help of the server. The server will generate the required html file.
+
+Additionally your css and client sided javascript can still block the first paint. 
+You wanna keep an eye on your network tap to see what is slowing down the first useable state.
+
+adding defer to your javascript script tag helps (or putting it at the bottom of the body). 
+Little tricks like minifying scripts, concatenating scripts together as one, loading async and optimizing images might helps aswell. 
+
 ## License 
 This project makes use of the MIT License
 [License](https://github.com/Ramon96/progressive-web-apps-1920/blob/master/LICENSE)
